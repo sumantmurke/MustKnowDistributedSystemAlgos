@@ -1,8 +1,6 @@
 package Bloom;
 
-public class Bloom {
-	
-	
+public class Bloom {	
 	int size;
 	int[] filter;
 	
@@ -15,23 +13,18 @@ public class Bloom {
 		
 		int bloomIndex = hash(key);
 		int bitIndex = bitIndex(key);
-		
-		
-		
+			
 		byte mask = (byte) (1 << bitIndex);
 		int currentVal = filter[bloomIndex];
 		
 		System.out.println("current value for key "+ key
-				+" in the filter for index "+bloomIndex+ " with bitIndex "+ 
-				bitIndex+" is "+currentVal);
-		
+				+" in the filter for index "+bloomIndex+ 
+				" with bitIndex "+ bitIndex+" is "+currentVal);
 		
 		filter[bloomIndex]=(currentVal | mask);
 		
 		System.out.println(filter[bloomIndex]);
-		System.out.println(" ");
-		
-		
+		System.out.println(" ");	
 	}
 	
 	public boolean isKey(String key) {
@@ -41,8 +34,7 @@ public class Bloom {
 		
 		byte mask = (byte) (1 << bitIndex);
 		int currentVal = filter[bloomIndex];
-        return (currentVal & mask) != 0;
-        
+        return (currentVal & mask) != 0;        
 	}
 
 	public int hash(String key) {
@@ -66,8 +58,8 @@ public class Bloom {
 		
 		String[] needToCheck = {"i","j","k","h" };
 		
-		for(String a : needToCheck) {
-			System.out.println("Key "+a+" present is "+bloom.isKey(a));
+		for(String check : needToCheck) {
+			System.out.println("Key "+check+" present is "+bloom.isKey(check));
 		}
 
 	}
