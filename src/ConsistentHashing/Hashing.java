@@ -16,7 +16,7 @@ public class Hashing {
 		byte[] seedByte = seed.getBytes();
 		int hash = MurmurHash3.hash32(seedByte);
 		
-		System.out.print("hash for seed "+seed+" is "+hash);
+		System.out.println("hash for seed "+seed+" is "+hash);
 		
 		return hash;
 	}
