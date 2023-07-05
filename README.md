@@ -2,6 +2,6 @@
 
 # 1. Bloom filter
 
-# 2. Consistent Hashing 
+# 2. Consistent Hashing for web pages.
 
 # 3. count-min sketch
